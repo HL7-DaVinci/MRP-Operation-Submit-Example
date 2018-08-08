@@ -1,0 +1,220 @@
+{
+   "resourceType": "Parameters",
+   "id": "f317d807-4352-4005-9af5-532ddaff019a",
+   "parameter": [
+      {
+        "name": "measurereport",
+        "resource": {
+            "resourceType": "MeasureReport",
+            "meta": {
+              "profile": ["http://hl7.org/fhir/ig/davinci/StructureDefinition/measurereport-mrp"]
+            },
+            "id": "119d4bc0-b5e8-4dc3-9eff-dd68b822a0f3",
+            "status": "complete",
+            "type": "individual",
+            "measure": {
+                "reference": "https://ncqa.org/fhir/ig/Measure/measure-mrp"
+            },
+            "patient": {
+                "reference": "Patient/cb8acdcc-3ded-4fa2-bd4d-31f1a25e0262"
+            },
+            "date": "2018-07-15",
+            "reportingOrganization": {
+                "reference": "Organization/b3cb2561-f4e8-4f66-bd5d-d02395aac9e6"
+            },
+            "evaluatedResources": {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/ig/davinci/StructureDefinition/extension-referenceAny",
+                        "valueReference": {
+                            "reference": "Task/f317d807-4352-4005-9af5-532ddaff019a"
+                        }
+                    }
+                ]
+            }
+        }
+      },
+      {
+        "name": "resource",
+        "resource": {
+            "resourceType": "Task",
+            "meta": {
+              "profile": ["http://hl7.org/fhir/ig/davinci/StructureDefinition/task-mrp"]
+            },
+            "id": "f317d807-4352-4005-9af5-532ddaff019a",
+            "status": "completed",
+            "intent": "plan",
+            "code": {
+                "coding":[
+                    {
+                        "system": "http://www.ama-assn.org/go/cpt",
+                        "code": "1111F",
+                        "display": "Medication Reconciliation"
+                    }
+                ]
+            },
+            "for": {
+              "reference": "Patient/cb8acdcc-3ded-4fa2-bd4d-31f1a25e0262"
+            },
+            "context": {
+              "reference": "Encounter/d513e4e8-37d6-49a8-aba7-09169ae5a9df"
+            },
+            "authoredOn": "2018-07-15",
+            "owner": {
+              "reference": "Practitioner/5ae1aa28-9f06-4823-b074-54bcb11b86dc"
+            }
+        }
+      },
+      {
+        "name": "resource",
+        "resource": {
+            "resourceType": "Patient",
+            "meta": {
+              "profile": ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"]
+            },
+            "id": "cb8acdcc-3ded-4fa2-bd4d-31f1a25e0262",
+            "active": true,
+            "identifier": [
+              {
+                "use": "usual",
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/v2/0203",
+                      "code": "MR"
+                    }
+                  ]
+                },
+                "system": "http://hospital.davinci.org",
+                "value": "12345"
+              }
+            ],
+            "name": [
+              {
+                "use": "official",
+                "family": "Patient",
+                "given": [
+                  "DaVinici"
+                ]
+              }
+            ],
+            "gender": "male",
+            "birthDate": "2000-01-01"
+        }
+      },
+      {
+        "name": "resource",
+        "resource": {
+            "resourceType": "Location",
+            "meta": {
+              "profile": ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"]
+            },
+            "id": "2636b2e2-7776-4f3b-b3c6-094c3ceb517c",
+            "name": "Yellow building, second floor"
+        }          
+      },
+      {
+        "name": "resource",
+        "resource": {
+            "resourceType": "Practitioner",
+            "meta": {
+              "profile": ["http://hl7.org/fhir/ig/davinci/StructureDefinition/practitioner-davinci"]
+            },
+            "id": "5ae1aa28-9f06-4823-b074-54bcb11b86dc",
+            "active": true,
+            "identifier": [
+              {
+                "system": "http://npiregistry.cms.hhs.gov/",
+                "value": "12345"
+              }
+            ],
+            "name": {
+              "family": [
+                "Practitioner"
+              ],
+              "given": [
+                "DaVinci"
+              ]
+            }
+        }
+      },
+      {
+        "name": "resource",
+        "resource": {
+            "resourceType": "Organization",
+            "id": "b3cb2561-f4e8-4f66-bd5d-d02395aac9e6",
+            "meta": {
+              "profile": ["http://hl7.org/fhir/ig/davinci/StructureDefinition/organization-davinci"]
+            },
+            "identifier": [
+              {
+                "system": "http://hl7.org/fhir/sid/us-npi",
+                "value": "12345"
+              }
+            ],
+            "name": "Pink Elephant Municipal Hospital"
+        }
+      },
+      {
+        "name": "resource",
+        "resource": {
+            "resourceType": "Encounter",
+            "id": "d513e4e8-37d6-49a8-aba7-09169ae5a9df",
+            "meta": {
+              "profile": ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"]
+            },
+            "status": "finished",
+            "class": {
+              "system": "http://hl7.org/fhir/v3/ActCode",
+              "code": "AMB",
+              "display": "ambulatory"
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "390906007",
+                    "display": "Follow-up encounter (procedure)"
+                  }
+                ]
+              }
+            ],
+            "period": {
+                "start": "2018-07-15",
+                "end": "2018-07-15"
+            },
+            "subject": {
+              "reference": "Patient/cb8acdcc-3ded-4fa2-bd4d-31f1a25e0262"
+            },
+            "location": {
+              "reference": "Location/2636b2e2-7776-4f3b-b3c6-094c3ceb517c"
+            },
+            "participant": [
+              {
+                "individual": {
+                  "reference": "Practitioner/5ae1aa28-9f06-4823-b074-54bcb11b86dc"
+                }
+              }
+            ],
+            "serviceProvider": {
+              "reference": "Organization/b3cb2561-f4e8-4f66-bd5d-d02395aac9e6"
+            }
+        }
+      },
+      {
+        "name": "resource",
+        "resource": {
+            "resourceType": "Coverage",
+            "id": "ea66f949-4617-411a-be93-7e2443dde95e",
+            "meta": {
+              "profile": ["http://hl7.org/fhir/ig/davinci/StructureDefinition/coverage-davinci"]
+            },
+            "beneficiary": {
+              "reference": "Patient/cb8acdcc-3ded-4fa2-bd4d-31f1a25e0262"
+            },
+            "subscriberId": "abc12345"
+          }
+      }
+    ]
+ }
