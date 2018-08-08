@@ -3,7 +3,7 @@
    "id": "f317d807-4352-4005-9af5-532ddaff019a",
    "parameter": [
       {
-        "name": "measurereport",
+        "name": "measure-report",
         "resource": {
             "resourceType": "MeasureReport",
             "meta": {
