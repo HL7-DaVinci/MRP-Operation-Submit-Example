@@ -50,6 +50,7 @@
         "id": "04e12987-3130-f204-a804-905d4f752fd2",
         "status": "completed",
         "intent": "plan",
+        "priority": "routine",
         "code": {
           "coding": [
             {
