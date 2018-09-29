@@ -1,6 +1,6 @@
 {
   "resourceType": "Parameters",
-  "id": "2f1d33ef-33fc-723b-e4e5-cde2fd2bfc2c",
+  "id": "323822c7-0d64-64e1-d241-99ea436c793f",
   "parameter": [
     {
       "name": "measure-report",
@@ -11,7 +11,7 @@
             "http://hl7.org/fhir/us/davinci-deqm/STU3/StructureDefinition/measurereport-deqm"
           ]
         },
-        "id": "dcaeeb67-3097-a572-ba76-ca6e1008affe",
+        "id": "2cc0d6dc-3777-590f-3880-1f3e6c57dc20",
         "status": "complete",
         "type": "individual",
         "measure": {
@@ -20,10 +20,10 @@
         "patient": {
           "reference": "Patient/patient01"
         },
-        "date": "2018-09-29T14:15:04.424Z",
+        "date": "2018-09-29T20:02:16.004Z",
         "period": {
-          "start": "2018-09-29T14:15:04.424Z",
-          "end": "2018-09-29T14:15:04.424Z"
+          "start": "2018-09-29T20:02:16.004Z",
+          "end": "2018-09-29T20:02:16.004Z"
         },
         "reportingOrganization": "Organization/organization01",
         "evaluatedResources": {
@@ -31,7 +31,7 @@
             {
               "url": "http://hl7.org/fhir/ig/davinci/StructureDefinition/extension-referenceAny",
               "valueReference": {
-                "reference": "Task/04e12987-3130-f204-a804-905d4f752fd2"
+                "reference": "Task/a1640c55-655f-8b3d-4f55-55a1f73a9919"
               }
             }
           ]
@@ -47,7 +47,7 @@
             "http://hl7.org/fhir/us/hedis/StructureDefinition/hedis-task"
           ]
         },
-        "id": "04e12987-3130-f204-a804-905d4f752fd2",
+        "id": "a1640c55-655f-8b3d-4f55-55a1f73a9919",
         "status": "completed",
         "intent": "plan",
         "priority": "routine",
@@ -64,12 +64,12 @@
           "reference": "Patient/patient01"
         },
         "context": {
-          "reference": "Encounter/62b440de-9420-818d-6dbe-8f6de17f96fe"
+          "reference": "Encounter/4af297dd-b5b2-6ea0-9836-fc35107a5032"
         },
-        "authoredOn": "2018-09-29T14:15:04.424Z",
+        "authoredOn": "2018-09-29T20:02:16.004Z",
         "executionPeriod": {
-          "start": "2018-09-29T14:15:04.424Z",
-          "end": "2018-09-29T14:15:04.424Z"
+          "start": "2018-09-29T20:02:16.004Z",
+          "end": "2018-09-29T20:02:16.004Z"
         },
         "owner": {
           "reference": "Practitioner/practitioner01"
@@ -316,7 +316,7 @@
       "name": "resource",
       "resource": {
         "resourceType": "Encounter",
-        "id": "62b440de-9420-818d-6dbe-8f6de17f96fe",
+        "id": "4af297dd-b5b2-6ea0-9836-fc35107a5032",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
@@ -340,8 +340,8 @@
           }
         ],
         "period": {
-          "start": "2018-09-29T14:15:04.424Z",
-          "end": "2018-09-29T14:15:04.424Z"
+          "start": "2018-09-29T20:02:16.004Z",
+          "end": "2018-09-29T20:02:16.004Z"
         },
         "subject": {
           "reference": "Patient/patient01"
@@ -393,6 +393,60 @@
         "payor": [
           {
             "reference": "Organization/organization04"
+          }
+        ]
+      }
+    },
+    {
+      "name": "resource",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "organization04",
+        "meta": {
+          "versionId": "2",
+          "lastUpdated": "2018-09-29T13:52:27.000+00:00",
+          "profile": [
+            "http://hl7.org/fhir/us/davinci-deqm/STU3/StructureDefinition/organization-deqm"
+          ]
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://hl7.org/fhir/us/davinci-deqm/STU3/sid/us-tin",
+            "value": "456789123",
+            "assigner": {
+              "display": "www.irs.gov"
+            }
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/organization-type",
+                "code": "ins",
+                "display": "Insurance Company"
+              }
+            ]
+          }
+        ],
+        "name": "DVPayer04",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(+1) 616-555-1212"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "160 Glen Eagles Road"
+            ],
+            "city": "Grand Rapids",
+            "state": "MI",
+            "postalCode": "49503",
+            "country": "USA"
           }
         ]
       }
