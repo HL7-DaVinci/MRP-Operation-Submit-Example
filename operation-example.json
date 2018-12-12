@@ -1,6 +1,6 @@
 {
   "resourceType": "Parameters",
-  "id": "323822c7-0d64-64e1-d241-99ea436c793f",
+  "id": "025ed5bb-a2e7-bf6f-0559-f37c14a0c79e",
   "parameter": [
     {
       "name": "measure-report",
@@ -11,7 +11,7 @@
             "http://hl7.org/fhir/us/davinci-deqm/STU3/StructureDefinition/measurereport-deqm"
           ]
         },
-        "id": "2cc0d6dc-3777-590f-3880-1f3e6c57dc20",
+        "id": "8fb4b30a-9b39-06ae-af7f-8ef23b370a6d",
         "status": "complete",
         "type": "individual",
         "measure": {
@@ -20,22 +20,19 @@
         "patient": {
           "reference": "Patient/patient01"
         },
-        "date": "2018-09-29T20:02:16.004Z",
+        "date": "2018-12-12T17:54:03.934Z",
         "period": {
-          "start": "2018-09-29T20:02:16.004Z",
-          "end": "2018-09-29T20:02:16.004Z"
+          "start": "2018-12-12T17:54:03.934Z",
+          "end": "2018-12-12T17:54:03.934Z"
         },
-        "reportingOrganization": "Organization/organization01",
-        "evaluatedResources": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/ig/davinci/StructureDefinition/extension-referenceAny",
-              "valueReference": {
-                "reference": "Task/a1640c55-655f-8b3d-4f55-55a1f73a9919"
-              }
-            }
-          ]
-        }
+        "reportingOrganization": {
+          "reference": "Organization/organization01"
+        },
+        "evaluatedResource": [
+          {
+            "reference": "Task/eda61d26-3686-0504-9331-8ab3fecea186"
+          }
+        ]
       }
     },
     {
@@ -47,7 +44,13 @@
             "http://hl7.org/fhir/us/hedis/StructureDefinition/hedis-task"
           ]
         },
-        "id": "a1640c55-655f-8b3d-4f55-55a1f73a9919",
+        "id": "eda61d26-3686-0504-9331-8ab3fecea186",
+        "identifier": [
+          {
+            "system": "http://www.acme.org/tasks",
+            "value": "12345"
+          }
+        ],
         "status": "completed",
         "intent": "plan",
         "priority": "routine",
@@ -64,12 +67,12 @@
           "reference": "Patient/patient01"
         },
         "context": {
-          "reference": "Encounter/4af297dd-b5b2-6ea0-9836-fc35107a5032"
+          "reference": "Encounter/8592c13d-821a-bfef-74db-ae614e754d4f"
         },
-        "authoredOn": "2018-09-29T20:02:16.004Z",
+        "authoredOn": "2018-12-12T17:54:03.934Z",
         "executionPeriod": {
-          "start": "2018-09-29T20:02:16.004Z",
-          "end": "2018-09-29T20:02:16.004Z"
+          "start": "2018-12-12T17:54:03.934Z",
+          "end": "2018-12-12T17:54:03.934Z"
         },
         "owner": {
           "reference": "Practitioner/practitioner01"
@@ -82,8 +85,8 @@
         "resourceType": "Patient",
         "id": "patient01",
         "meta": {
-          "versionId": "2",
-          "lastUpdated": "2018-09-29T13:52:27.000+00:00",
+          "versionId": "4",
+          "lastUpdated": "2018-12-12T17:05:43.000+00:00",
           "profile": [
             "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient"
           ]
@@ -95,31 +98,39 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
-            "valueCode" : "M"
+            "valueCode": "M"
           },
           {
             "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
-            "extension" : [
+            "extension": [
               {
-                "url" : "ombCategory",
-                "valueCoding" : {
-                  "system" : "urn:oid:2.16.840.1.113883.6.238",
-                  "code" : "2106-3",
-                  "display" : "White"
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2106-3",
+                  "display": "White"
                 }
+              },
+              {
+                "url": "text",
+                "valueString": "White"
               }
             ]
           },
           {
             "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
-            "extension" : [
+            "extension": [
               {
-                "url" : "ombCategory",
-                "valueCoding" : {
-                  "system" : "urn:oid:2.16.840.1.113883.6.238",
-                  "code" : "2186-5",
-                  "display" : "Not Hispanic or Latino"
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2186-5",
+                  "display": "Not Hispanic or Latino"
                 }
+              },
+              {
+                "url": "text",
+                "valueString": "Not Hispanic or Latino"
               }
             ]
           }
@@ -198,7 +209,7 @@
         "id": "location01",
         "meta": {
           "versionId": "2",
-          "lastUpdated": "2018-09-29T13:52:27.000+00:00",
+          "lastUpdated": "2018-12-12T17:05:44.000+00:00",
           "profile": [
             "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location"
           ]
@@ -221,8 +232,8 @@
         "resourceType": "Practitioner",
         "id": "practitioner01",
         "meta": {
-          "versionId": "2",
-          "lastUpdated": "2018-09-29T13:52:27.000+00:00",
+          "versionId": "4",
+          "lastUpdated": "2018-12-12T17:05:43.000+00:00",
           "profile": [
             "http://hl7.org/fhir/us/davinci-deqm/STU3/StructureDefinition/practitioner-deqm"
           ]
@@ -231,7 +242,13 @@
           {
             "use": "official",
             "type": {
-              "text": "NPI"
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/v2/0203",
+                  "code": "PRN",
+                  "display": "Provider number"
+                }
+              ]
             },
             "system": "http://hl7.org/fhir/sid/us-npi",
             "value": "456789123"
@@ -258,8 +275,8 @@
         "resourceType": "Organization",
         "id": "organization01",
         "meta": {
-          "versionId": "2",
-          "lastUpdated": "2018-09-29T13:52:27.000+00:00",
+          "versionId": "4",
+          "lastUpdated": "2018-12-12T17:05:43.000+00:00",
           "profile": [
             "http://hl7.org/fhir/us/davinci-deqm/STU3/StructureDefinition/organization-deqm"
           ]
@@ -267,7 +284,16 @@
         "identifier": [
           {
             "use": "official",
-            "system": "http://hl7.org/fhir/us/davinci-deqm/STU3/sid/us-tin",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/v2/0203",
+                  "code": "TAX",
+                  "display": "Tax ID number"
+                }
+              ]
+            },
+            "system": "urn:oid:2.16.840.1.113883.4.4",
             "value": "123456789",
             "assigner": {
               "display": "www.irs.gov"
@@ -310,7 +336,7 @@
       "name": "resource",
       "resource": {
         "resourceType": "Encounter",
-        "id": "4af297dd-b5b2-6ea0-9836-fc35107a5032",
+        "id": "8592c13d-821a-bfef-74db-ae614e754d4f",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
@@ -334,8 +360,8 @@
           }
         ],
         "period": {
-          "start": "2018-09-29T20:02:16.004Z",
-          "end": "2018-09-29T20:02:16.004Z"
+          "start": "2018-12-12T17:54:03.934Z",
+          "end": "2018-12-12T17:54:03.934Z"
         },
         "subject": {
           "reference": "Patient/patient01"
@@ -362,7 +388,7 @@
         "id": "coverage01",
         "meta": {
           "versionId": "2",
-          "lastUpdated": "2018-09-29T13:52:27.000+00:00",
+          "lastUpdated": "2018-12-12T17:05:44.000+00:00",
           "profile": [
             "http://hl7.org/fhir/us/davinci-deqm/STU3/StructureDefinition/coverage-deqm"
           ]
@@ -397,8 +423,8 @@
         "resourceType": "Organization",
         "id": "organization04",
         "meta": {
-          "versionId": "2",
-          "lastUpdated": "2018-09-29T13:52:27.000+00:00",
+          "versionId": "4",
+          "lastUpdated": "2018-12-12T17:05:44.000+00:00",
           "profile": [
             "http://hl7.org/fhir/us/davinci-deqm/STU3/StructureDefinition/organization-deqm"
           ]
@@ -406,7 +432,16 @@
         "identifier": [
           {
             "use": "official",
-            "system": "http://hl7.org/fhir/us/davinci-deqm/STU3/sid/us-tin",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/v2/0203",
+                  "code": "TAX",
+                  "display": "Tax ID number"
+                }
+              ]
+            },
+            "system": "urn:oid:2.16.840.1.113883.4.4",
             "value": "456789123",
             "assigner": {
               "display": "www.irs.gov"
