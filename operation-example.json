@@ -204,7 +204,9 @@
             "preferred": true
           }
         ],
-        "managingOrganization": "Organization/organization01"
+        "managingOrganization": {
+          "reference": "Organization/organization01"
+        }
       }
     },
     {
