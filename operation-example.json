@@ -28,11 +28,16 @@
         "reportingOrganization": {
           "reference": "Organization/organization01"
         },
-        "evaluatedResource": [
-          {
-            "reference": "Task/eda61d26-3686-0504-9331-8ab3fecea186"
-          }
-        ]
+        "evaluatedResources": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-referenceAny",
+              "valueReference": {
+                "reference": "Task/eda61d26-3686-0504-9331-8ab3fecea186"
+              }
+            }
+          ]
+        }
       }
     },
     {
