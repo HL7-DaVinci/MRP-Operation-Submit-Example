@@ -366,9 +366,11 @@
         "subject": {
           "reference": "Patient/patient01"
         },
-        "location": {
-          "reference": "Location/location01"
-        },
+        "location": [{
+          "location": {
+             "reference": "Location/location01"
+          }
+        }],
         "participant": [
           {
             "individual": {
